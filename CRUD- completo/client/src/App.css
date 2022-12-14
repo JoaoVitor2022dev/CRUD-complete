@@ -19,4 +19,11 @@
 
 .register--input {
   display: block;
+  padding: 7px 0;
+  margin: 10px auto;
 }
+
+.register--button {
+  padding: 2px 5px;  
+}
+
