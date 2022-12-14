@@ -1,6 +1,21 @@
+// import use state
+import React, { useState } from 'react'; 
+
+// import de css
 import './App.css';
 
 function App() {
+  const [values, setValues] = useState(); 
+     const handleChangeValues = (value) => {
+        setValues( (prevValue) => ({
+          ...prevValue, [value.target.name] : value.target.value, 
+        }));
+     }; 
+
+     const handleClickButton = () => {
+      console.log(values);
+     }; 
+
   return (
     <div className="app--container">
       <div className="register--container">
@@ -9,18 +24,21 @@ function App() {
               name="name"
               placeholder="Nome"
               className="register--input"
+              onChange={handleChangeValues}
             />
               <input type="text"
               name="cost"
               placeholder="Preço"
               className="register--input"
+              onChange={handleChangeValues}
             />
               <input type="text"
               name="category"
               placeholder="Categoria"
               className="register--input"
+              onChange={handleChangeValues}
             />
-            <button>Cadastrar</button>
+            <button className="register--button" onClick={ () => handleClickButton()}>Cadastrar</button>
       </div>
     </div>
   );
