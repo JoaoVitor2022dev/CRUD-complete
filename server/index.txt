@@ -1,0 +1,24 @@
+   "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^8.0.21",
+    "nodemon": "^2.0.20"
+
+ app.get("/", ( req , res ) => {
+       
+    const SQL = "INSERT INTO games(name, cost , category )VALUES ( 'GOD', 50, 'WAR' )"; 
+
+    db.query(SQL, (error, result) => {
+         if (error) {
+             console.log(error);
+         } else {
+             console.log('dado enviado...');
+             res.send('servidor rodando perfeitamente...');
+         }
+    })
+ }); 
+
+
+   // metodos get para poder fazer as requisition e pegar valor 
+// metodo post para enviar as solicitions 
+// metodo delete para deleltar... 
+// metodo put para editar arquivos... 
